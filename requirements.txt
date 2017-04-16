@@ -1,0 +1,4 @@
+pytz
+ed25519
+# recommended, but not necessary
+python-rapidjson
