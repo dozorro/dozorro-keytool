@@ -169,7 +169,7 @@ def export_pubkey(seckey='keyseed.dat', pubkey='pubkey.json', owner_name='root')
     data = {
         'envelope': {
             'date': dt_now.isoformat()+TZ,
-            'model': 'admin',
+            'model': 'admin/pubkey',
             'owner': owner_name,
             'payload': {
                 'algorithm': 'Ed25519',
@@ -177,8 +177,7 @@ def export_pubkey(seckey='keyseed.dat', pubkey='pubkey.json', owner_name='root')
                 'publicKey': vk_s,
                 'validSince': dt_now.isoformat()+TZ,
                 'validTill': dt_exp.isoformat()+TZ
-            },
-            'schema': 'pubkey'
+            }
         }
     }
     data_sign(data, sk, vk)
